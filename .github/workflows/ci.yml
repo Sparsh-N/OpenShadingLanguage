@@ -50,10 +50,9 @@ jobs:
         run: |
             ${{matrix.setenvs}}
             src/build-scripts/ci-startup.bash
-            llvm-cov --version
-      - name: Dependencies # Messes Up here
-        shell: bash
-        run: src/build-scripts/gh-win-installdeps.bash
+      # - name: Dependencies # Messes Up here in Boost, llvm is
+      #   shell: bash
+      #   run: src/build-scripts/gh-win-installdeps.bash
       - name: Build
         shell: bash
         run: src/build-scripts/ci-build.bash
@@ -63,15 +62,12 @@ jobs:
       - uses: actions/upload-artifact@26f96dfa697d77e81fd5907df203aa23a56210a8 # v4.3.0
         if: failure()
         with:
-          name: oiio-${{github.job}}-VS${{matrix.vsver}}
+          name: osl-${{github.job}}-VS${{matrix.vsver}}
           path: |
-            build/cmake-save
-            build/testsuite/*/*.*
-            build/deps/dist/*/*.cmake
-            !build/testsuite/oiio-images
-            !build/testsuite/openexr-images
-            !build/testsuite/fits-images
-            !build/testsuite/j2kp4files_v1_5
+              build/cmake-save
+              build/*.cmake
+              build/CMake*
+              build/testsuite/*/*.*
 
 
 # # Copyright Contributors to the Open Shading Language project.
