@@ -16,6 +16,8 @@ if [[ -n "$CODECOV" ]] ; then
     OSL_CMAKE_FLAGS="$OSL_CMAKE_FLAGS -DCODECOV=${CODECOV}"
 fi
 
+CMAKE_CXX_STANDARD=17
+
 pushd build
 cmake .. -G "$CMAKE_GENERATOR" \
         -DCMAKE_BUILD_TYPE="${CMAKE_BUILD_TYPE}" \
