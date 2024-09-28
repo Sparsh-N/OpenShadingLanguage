@@ -55,6 +55,8 @@ vcpkg install libjpeg-turbo:x64-windows
 
 vcpkg install libraw:x64-windows
 vcpkg install openjpeg:x64-windows
+# test, 
+vcpkg install openimageio
 # vcpkg install ffmpeg:x64-windows   # takes FOREVER!
 # vcpkg install webp:x64-windows  # No such vcpkg package?a
 
