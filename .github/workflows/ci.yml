@@ -50,9 +50,9 @@ jobs:
         run: |
             ${{matrix.setenvs}}
             src/build-scripts/ci-startup.bash
-      # - name: Dependencies # Messes Up here in Boost, llvm is
-      #   shell: bash
-      #   run: src/build-scripts/gh-win-installdeps.bash
+      - name: Dependencies # Messes Up here in Boost
+        shell: bash
+        run: src/build-scripts/gh-win-installdeps.bash
       - name: Build
         shell: bash
         run: src/build-scripts/ci-build.bash
