@@ -48,6 +48,7 @@ jobs:
       - name: Build setup
         shell: bash
         run: |
+            llvm-config
             ${{matrix.setenvs}}
             src/build-scripts/ci-startup.bash
       - name: Dependencies # Messes Up here in Boost
