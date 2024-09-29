@@ -57,6 +57,7 @@ vcpkg install libraw:x64-windows
 vcpkg install openjpeg:x64-windows
 # test, 
 vcpkg install openimageio
+source src/build-scripts/build_pugixml.bash
 # vcpkg install ffmpeg:x64-windows   # takes FOREVER!
 # vcpkg install webp:x64-windows  # No such vcpkg package?a
 
