@@ -48,10 +48,9 @@ jobs:
       - name: Build setup
         shell: bash
         run: |
-            llvm-config --version
             ${{matrix.setenvs}}
             src/build-scripts/ci-startup.bash
-      - name: Dependencies # Messes Up here in Boost
+      - name: Dependencies
         shell: bash
         run: src/build-scripts/gh-win-installdeps.bash
       - name: Build
