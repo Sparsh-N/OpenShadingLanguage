@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-llvm-config --version
+
 # Copyright Contributors to the Open Shading Language project.
 # SPDX-License-Identifier: BSD-3-Clause
 # https://github.com/AcademySoftwareFoundation/OpenShadingLanguage
@@ -58,6 +58,10 @@ vcpkg install openjpeg:x64-windows
 # test, 
 vcpkg install openimageio
 source src/build-scripts/build_pugixml.bash
+
+echo building llvm 123
+source src/build-scripts/build_llvm.bash
+llvm-config --version
 # vcpkg install ffmpeg:x64-windows   # takes FOREVER!
 # vcpkg install webp:x64-windows  # No such vcpkg package?a
 
