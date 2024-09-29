@@ -61,7 +61,12 @@ source src/build-scripts/build_pugixml.bash
 
 echo building llvm 123
 # source src/build-scripts/build_llvm.bash
-vcpkg install llvm
+git clone https://github.com/llvm/llvm-project.git
+cd llvm-project
+mkdir build && cd build
+cmake -G "Unix Makefiles" ../llvm
+make
+
 llvm-config --version
 # vcpkg install ffmpeg:x64-windows   # takes FOREVER!
 # vcpkg install webp:x64-windows  # No such vcpkg package?a
