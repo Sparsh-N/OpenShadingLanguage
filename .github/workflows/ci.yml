@@ -50,6 +50,10 @@ jobs:
         run: |
             ${{matrix.setenvs}}
             src/build-scripts/ci-startup.bash
+      - name: Install LLVM and Clang
+        uses: KyleMayes/install-llvm-action@v2
+        with:
+          version: "18.1.8"
       - name: Dependencies
         shell: bash
         run: src/build-scripts/gh-win-installdeps.bash
