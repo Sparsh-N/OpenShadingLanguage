@@ -57,8 +57,7 @@ jobs:
             mkdir build
             cd build
             cmake ..
-            echo test2
-            cmake --build
+            cmake --build . --config Release
             flex --version
             bison --version
       # - name: Install LLVM and Clang
