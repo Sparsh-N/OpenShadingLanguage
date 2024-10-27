@@ -57,8 +57,7 @@ jobs:
             mkdir build
             cd build
             cmake ..
-            cmake --build . --config Release
-            echo "##[add-path]$(pwd)/Release"
+            cmake --build . --config release
             flex --version
             bison --version
       # - name: Install LLVM and Clang
