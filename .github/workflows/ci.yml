@@ -52,11 +52,10 @@ jobs:
       - name: Install 7-zip
         shell: bash
         run: |
-            VCPKG_INSTALLATION_ROOT=/c/vcpkg
-            vcpkg install 7zip
+            choco install curl
+            choco install 7zip.install
       - name: Add 7-Zip to PATH
         run: |
-            echo "C:/vcpkg/installed/x64-windows/bin" >> $GITHUB_PATH
             7z --version || echo "7z command not found. Check installation."
       # choco install 7zip.install
       # - name: Install Flex and Bison
