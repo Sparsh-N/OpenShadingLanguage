@@ -58,8 +58,6 @@ jobs:
             cd build
             cmake ..
             cmake --build . --config Release
-            echo testpoint2
-            ls -la Release
             echo "##[add-path]$(pwd)/Release"
             flex --version
             bison --version
