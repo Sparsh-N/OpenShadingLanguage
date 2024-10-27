@@ -49,9 +49,6 @@ jobs:
         run: |
             ${{matrix.setenvs}}
             src/build-scripts/ci-startup.bash
-      - name: Create temp directory
-        run: |
-          mkdir C:\temp
       - name: Install curl
         shell: bash
         run: |
