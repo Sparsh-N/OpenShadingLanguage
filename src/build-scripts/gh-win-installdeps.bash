@@ -55,7 +55,7 @@ vcpkg install libjpeg-turbo:x64-windows
 
 vcpkg install libraw:x64-windows
 vcpkg install openjpeg:x64-windows
-vcpkg install llvm:x64-windows
+# vcpkg install llvm:x64-windows
 vcpkg install openimageio:x64-windows
 source src/build-scripts/build_pugixml.bash
 
