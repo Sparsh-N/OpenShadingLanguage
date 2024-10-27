@@ -52,7 +52,9 @@ jobs:
       - name: Install curl
         shell: bash
         run: |
-            choco install 7zip.install
+            VCPKG_INSTALLATION_ROOT=/c/vcpkg
+            vcpkg install 7zip
+      # choco install 7zip.install
       # - name: Install Flex and Bison
       #   shell: bash
       #   run: |
