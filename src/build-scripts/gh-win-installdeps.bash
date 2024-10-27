@@ -55,11 +55,10 @@ vcpkg install libjpeg-turbo:x64-windows
 
 vcpkg install libraw:x64-windows
 vcpkg install openjpeg:x64-windows
-# test, 
+vcpkg install llvm
 vcpkg install openimageio
 source src/build-scripts/build_pugixml.bash
 
-echo building llvm 123
 # source src/build-scripts/build_llvm.bash
 # git clone https://github.com/llvm/llvm-project.git
 # cd llvm-project
@@ -68,7 +67,6 @@ echo building llvm 123
 # make
 
 # source src/build-scripts/build_llvm.bash
-llvm-config --version
 # vcpkg install ffmpeg:x64-windows   # takes FOREVER!
 # vcpkg install webp:x64-windows  # No such vcpkg package?a
 
