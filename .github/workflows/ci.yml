@@ -58,8 +58,6 @@ jobs:
             cd build
             cmake ..
             cmake --build . --config release
-            flex --version
-            bison --version
       # - name: Install LLVM and Clang
       #   uses: KyleMayes/install-llvm-action@v2
       #   with:
