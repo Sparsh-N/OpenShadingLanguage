@@ -9,6 +9,7 @@ name: CI
 
 on:
   workflow_dispatch:
+  push:
 
 permissions: read-all
 
@@ -49,11 +50,14 @@ jobs:
         run: |
             ${{matrix.setenvs}}
             src/build-scripts/ci-startup.bash
-      - name: Install 7-zip
-        shell: bash
+      - name: Install 7-Zip
+        shell: powershell
         run: |
-            choco install curl
-            choco install 7zip.install
+            $url = "https://www.7-zip.org/a/7z2201-x64.msi"
+            $output = "7z.msi"
+            Invoke-WebRequest -Uri $url -OutFile $output
+            Start-Process msiexec.exe -ArgumentList "/i $output /quiet /norestart" -NoNewWindow -Wait
+            Remove-Item $output
       - name: Add 7-Zip to PATH
         run: |
             7z --version || echo "7z command not found. Check installation."
