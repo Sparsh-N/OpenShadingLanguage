@@ -59,8 +59,13 @@ jobs:
             Start-Process msiexec.exe -ArgumentList "/i $output /quiet /norestart" -NoNewWindow -Wait
             Remove-Item $output
       - name: Add 7-Zip to PATH
+        shell: powershell
         run: |
-            7z --version || echo "7z command not found. Check installation."
+            $path = "C:\Program Files\7-Zip"
+            if (-Not ($env:Path -like "*$path*")) {
+                $env:Path += ";$path"
+                [Environment]::SetEnvironmentVariable("Path", $env:Path, [EnvironmentVariableTarget]::Machine)
+            }
       # choco install 7zip.install
       # - name: Install Flex and Bison
       #   shell: bash
