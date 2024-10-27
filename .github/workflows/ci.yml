@@ -44,23 +44,23 @@ jobs:
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
       - name: Setup Nuget.exe
         uses: nuget/setup-nuget@a21f25cd3998bf370fde17e3f1b4c12c175172f9 # v2.0.0
-      - name: Install Flex and Bison
-        shell: bash
-        run: |
-            git clone https://github.com/lexxmark/winflexbison
-            cd winflexbison
-            mkdir build
-            cd build
-            cmake ..
-            cmake --build . --config Release
-            $env:PATH += ";$PWD\bin\Release"
-            flex --version
-            bison --version
       - name: Build setup
         shell: bash
         run: |
             ${{matrix.setenvs}}
             src/build-scripts/ci-startup.bash
+            - name: Install Flex and Bison
+            shell: bash
+            run: |
+                git clone https://github.com/lexxmark/winflexbison
+                cd winflexbison
+                mkdir build
+                cd build
+                cmake ..
+                cmake --build . --config Release
+                $env:PATH += ";$PWD\bin\Release"
+                flex --version
+                bison --version
       # - name: Install LLVM and Clang
       #   uses: KyleMayes/install-llvm-action@v2
       #   with:
