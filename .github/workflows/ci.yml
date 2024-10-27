@@ -62,6 +62,7 @@ jobs:
       #   uses: KyleMayes/install-llvm-action@v2
       #   with:
       #     version: "18.1.8"
+      - uses: milliewalky/setup-7-zip@v1
       - name: Install LLVM and Clang
         uses: KyleMayes/install-llvm-action@v2
         with:
