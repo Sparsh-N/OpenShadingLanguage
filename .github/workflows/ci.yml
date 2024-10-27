@@ -49,15 +49,15 @@ jobs:
         run: |
             ${{matrix.setenvs}}
             src/build-scripts/ci-startup.bash
-      - name: Install Flex and Bison
-        shell: bash
-        run: |
-            git clone https://github.com/lexxmark/winflexbison
-            cd winflexbison
-            mkdir build
-            cd build
-            cmake ..
-            cmake --build . --config release
+      # - name: Install Flex and Bison
+      #   shell: bash
+      #   run: |
+      #       git clone https://github.com/lexxmark/winflexbison
+      #       cd winflexbison
+      #       mkdir build
+      #       cd build
+      #       cmake ..
+      #       cmake --build . --config release
       # - name: Install LLVM and Clang
       #   uses: KyleMayes/install-llvm-action@v2
       #   with:
