@@ -54,7 +54,7 @@ jobs:
             cd build
             cmake ..
             cmake --build . --config Release
-            $env:PATH += ";$(pwd)\bin\Release"
+            $env:PATH += ";$PWD\bin\Release"
             flex --version
             bison --version
       - name: Build setup
