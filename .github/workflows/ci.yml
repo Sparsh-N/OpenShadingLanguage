@@ -49,10 +49,13 @@ jobs:
         run: |
             ${{matrix.setenvs}}
             src/build-scripts/ci-startup.bash
+      - name: Create temp directory
+        run: |
+          mkdir C:\temp
       - name: Install curl
         shell: bash
         run: |
-            choco install curl -y
+            choco install 7zip.install
       # - name: Install Flex and Bison
       #   shell: bash
       #   run: |
@@ -66,7 +69,6 @@ jobs:
       #   uses: KyleMayes/install-llvm-action@v2
       #   with:
       #     version: "18.1.8"
-      - uses: milliewalky/setup-7-zip@v1
       - name: Install LLVM and Clang
         uses: KyleMayes/install-llvm-action@v2
         with:
