@@ -88,8 +88,6 @@ jobs:
       - name: Dependencies
         shell: bash
         run: |
-          echo Check Ninja Version
-          ninja --version
           src/build-scripts/gh-win-installdeps.bash
         # run: src/build-scripts/gh-win-installdeps.bash
       # - name: New Build
