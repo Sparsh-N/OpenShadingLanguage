@@ -80,11 +80,11 @@ jobs:
       #   uses: KyleMayes/install-llvm-action@v2
       #   with:
       #     version: "18.1.8"
-      - name: Install LLVM and Clang
-        uses: KyleMayes/install-llvm-action@v2
-        with:
-          version: "16.0"
-          directory: ${{ runner.temp }}/llvm
+      # - name: Install LLVM and Clang
+      #   uses: KyleMayes/install-llvm-action@v2
+      #   with:
+      #     version: "16.0"
+      #     directory: ${{ runner.temp }}/llvm
       - name: Dependencies
         shell: bash
         run: |
@@ -92,10 +92,10 @@ jobs:
           ninja --version
           src/build-scripts/gh-win-installdeps.bash
         # run: src/build-scripts/gh-win-installdeps.bash
-      - name: New Build
-        shell: bash
-        run: |
-          echo Check Ninja Version 2
+      # - name: New Build
+      #   shell: bash
+      #   run: |
+      #     echo Check Ninja Version 2
       - name: Build
         shell: bash
         run: src/build-scripts/ci-build.bash
