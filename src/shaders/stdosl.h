@@ -184,6 +184,10 @@ int isfinite (float x) BUILTIN;
 float erf (float x) BUILTIN;
 float erfc (float x) BUILTIN;
 
+// TEST for the PR - Not BUILTIN function
+vector remap (vector input, vector minIn, vector maxIn, vector minOut, vector maxOut) { return minOut + (input - minIn) * (maxOut - minOut) / (maxIn - minIn); }
+float  remap (float  input, float  minIn, float maxIn, float  minOut, float maxOut) { return minOut + (input - minIn) * (maxOut - minOut) / (maxIn - minIn); }
+
 // Vector functions
 
 vector cross (vector a, vector b) BUILTIN;
